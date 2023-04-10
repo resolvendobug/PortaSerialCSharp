@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace LerPorta.Services
@@ -11,6 +12,7 @@ namespace LerPorta.Services
         public List<string> Portas { get; }
         public List<string> dados { get; set;}
         private SerialPort sp;
+        private string hex;
 
         public ComPort()
         {
@@ -22,6 +24,7 @@ namespace LerPorta.Services
         {
             sp = new SerialPort(porta, 9600, Parity.None, 8, StopBits.One);
             dados = new List<string>();
+            sp.Open();
         }
 
         public void LerPortas()
@@ -41,8 +44,16 @@ namespace LerPorta.Services
         public void LerDados()
         {
             sp.DataReceived += sp_DataReceived;
-            sp.Open();
+           
         }
+
+        public void SendDados(string dados)
+        {
+           byte[] bytes = Encoding.ASCII.GetBytes(dados);
+            sp.Write(bytes, 0, bytes.Length);
+         //  sp.Write(dados);
+        }
+        
 
         void sp_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -53,8 +64,15 @@ namespace LerPorta.Services
                 int length = sp.BytesToRead;
                 byte[] buf = new byte[length];
                 sp.Read(buf, 0, length);
-                string hex =  Convert.ToHexString(buf);
-                dados.Add(hex);
+               // string hex =  Convert.ToHexString(buf);
+                hex +=  System.Text.Encoding.UTF8.GetString(buf);
+                if (hex.Contains("0330"))
+                {
+                    dados.Add(hex);
+                    hex = "";
+                }
+               // dados.Add(hex);
+
             }
             catch (Exception ex)
             {

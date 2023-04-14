@@ -1,6 +1,4 @@
-﻿
-using System.IO.Ports;
-using LerPorta.Services;
+﻿using LerPorta.Services;
 
 namespace LerPorta
 {
@@ -20,8 +18,9 @@ namespace LerPorta
             
             com.IniciarPorta(com.Portas[2]);
             com2.IniciarPorta(com.Portas[1]);
-            com.LerDados();
-          
+           // com.LerDados();
+          //  com2.LerDados();
+
             string[] dados = new string[12];
             dados[0] = "01";
             dados[1] = "53";
@@ -36,22 +35,28 @@ namespace LerPorta
             dados[10] = "03";
             dados[11] = "30";
 
-
             do
             {
                 string cs = "";
                 int i = 0;
                 while (! Console.KeyAvailable) {
                     
-                    com2.SendDados(dados[i]);
+                  //  com2.SendDados(dados[i]);
                     if (com.dados.Count > 0)
                     { 
 
                         foreach (var dado in com.dados.ToList())
                         {
                             Console.WriteLine(dado);
+                            com.dados.Remove(dado);
                         }
-                    
+
+                        foreach (var dado in com2.dados.ToList())
+                        {
+                            Console.WriteLine(com2._porta+": "+dado);
+                            com2.dados.Remove(dado);
+                        }
+
                         /*
                         foreach (var dado in com.dados.ToList())
                         {

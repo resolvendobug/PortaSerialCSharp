@@ -36,16 +36,19 @@
             iconButton2 = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
-            btnHome = new PictureBox();
             panelTitleBar = new Panel();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             lblTitleChildForm = new Label();
             iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             panelShadow = new Panel();
             panelDesktop = new Panel();
             panel1.SuspendLayout();
-            panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btnHome).BeginInit();
             panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).BeginInit();
             SuspendLayout();
             // 
@@ -84,6 +87,7 @@
             iconButton6.TextAlign = ContentAlignment.MiddleLeft;
             iconButton6.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton6.UseVisualStyleBackColor = true;
+            iconButton6.Visible = false;
             iconButton6.Click += iconButton6_Click;
             // 
             // iconButton5
@@ -105,6 +109,7 @@
             iconButton5.TextAlign = ContentAlignment.MiddleLeft;
             iconButton5.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton5.UseVisualStyleBackColor = true;
+            iconButton5.Visible = false;
             iconButton5.Click += iconButton5_Click;
             // 
             // iconButton4
@@ -126,6 +131,7 @@
             iconButton4.TextAlign = ContentAlignment.MiddleLeft;
             iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton4.UseVisualStyleBackColor = true;
+            iconButton4.Visible = false;
             iconButton4.Click += iconButton4_Click;
             // 
             // iconButton3
@@ -147,6 +153,7 @@
             iconButton3.TextAlign = ContentAlignment.MiddleLeft;
             iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton3.UseVisualStyleBackColor = true;
+            iconButton3.Visible = false;
             iconButton3.Click += iconButton3_Click;
             // 
             // iconButton2
@@ -154,7 +161,7 @@
             iconButton2.Dock = DockStyle.Top;
             iconButton2.FlatAppearance.BorderSize = 0;
             iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.BarChart;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.CodeCompare;
             iconButton2.IconColor = Color.Gainsboro;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 32;
@@ -164,7 +171,7 @@
             iconButton2.Padding = new Padding(10, 0, 20, 0);
             iconButton2.Size = new Size(220, 60);
             iconButton2.TabIndex = 2;
-            iconButton2.Text = "iconButton2";
+            iconButton2.Text = "Comunicação";
             iconButton2.TextAlign = ContentAlignment.MiddleLeft;
             iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton2.UseVisualStyleBackColor = true;
@@ -175,7 +182,7 @@
             iconButton1.Dock = DockStyle.Top;
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Play;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
             iconButton1.IconColor = Color.Gainsboro;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 32;
@@ -185,7 +192,7 @@
             iconButton1.Padding = new Padding(10, 0, 20, 0);
             iconButton1.Size = new Size(220, 60);
             iconButton1.TabIndex = 1;
-            iconButton1.Text = "iconButton1";
+            iconButton1.Text = "Perguntas/Respostas";
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton1.UseVisualStyleBackColor = true;
@@ -193,27 +200,18 @@
             // 
             // panelLogo
             // 
-            panelLogo.Controls.Add(btnHome);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
             panelLogo.Size = new Size(220, 140);
             panelLogo.TabIndex = 0;
             // 
-            // btnHome
-            // 
-            btnHome.Image = Properties.Resources.logo_vertice2;
-            btnHome.Location = new Point(12, 21);
-            btnHome.Name = "btnHome";
-            btnHome.Size = new Size(194, 92);
-            btnHome.SizeMode = PictureBoxSizeMode.Zoom;
-            btnHome.TabIndex = 0;
-            btnHome.TabStop = false;
-            btnHome.Click += btnHome_Click;
-            // 
             // panelTitleBar
             // 
             panelTitleBar.BackColor = Color.FromArgb(26, 25, 62);
+            panelTitleBar.Controls.Add(iconPictureBox3);
+            panelTitleBar.Controls.Add(iconPictureBox2);
+            panelTitleBar.Controls.Add(iconPictureBox1);
             panelTitleBar.Controls.Add(lblTitleChildForm);
             panelTitleBar.Controls.Add(iconCurrentChildForm);
             panelTitleBar.Dock = DockStyle.Top;
@@ -222,6 +220,54 @@
             panelTitleBar.Size = new Size(652, 75);
             panelTitleBar.TabIndex = 1;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
+            // 
+            // iconPictureBox3
+            // 
+            iconPictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            iconPictureBox3.BackColor = Color.FromArgb(26, 25, 62);
+            iconPictureBox3.ForeColor = Color.DodgerBlue;
+            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            iconPictureBox3.IconColor = Color.DodgerBlue;
+            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox3.IconSize = 24;
+            iconPictureBox3.Location = new Point(556, 20);
+            iconPictureBox3.Name = "iconPictureBox3";
+            iconPictureBox3.Size = new Size(24, 24);
+            iconPictureBox3.TabIndex = 4;
+            iconPictureBox3.TabStop = false;
+            iconPictureBox3.Click += iconPictureBox3_Click;
+            // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            iconPictureBox2.BackColor = Color.FromArgb(26, 25, 62);
+            iconPictureBox2.ForeColor = Color.DodgerBlue;
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Maximize;
+            iconPictureBox2.IconColor = Color.DodgerBlue;
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.IconSize = 24;
+            iconPictureBox2.Location = new Point(586, 12);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(24, 24);
+            iconPictureBox2.TabIndex = 3;
+            iconPictureBox2.TabStop = false;
+            iconPictureBox2.Click += iconPictureBox2_Click;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            iconPictureBox1.BackColor = Color.FromArgb(26, 25, 62);
+            iconPictureBox1.ForeColor = Color.DodgerBlue;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.X;
+            iconPictureBox1.IconColor = Color.DodgerBlue;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 24;
+            iconPictureBox1.Location = new Point(616, 12);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(24, 24);
+            iconPictureBox1.TabIndex = 2;
+            iconPictureBox1.TabStop = false;
+            iconPictureBox1.Click += iconPictureBox1_Click;
             // 
             // lblTitleChildForm
             // 
@@ -280,10 +326,11 @@
             TransparencyKey = Color.FromArgb(128, 255, 128);
             Load += Form1_Load;
             panel1.ResumeLayout(false);
-            panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)btnHome).EndInit();
             panelTitleBar.ResumeLayout(false);
             panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).EndInit();
             ResumeLayout(false);
         }
@@ -298,11 +345,13 @@
         private Panel panelLogo;
         private FontAwesome.Sharp.IconButton iconButton6;
         private FontAwesome.Sharp.IconButton iconButton5;
-        private PictureBox btnHome;
         private Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private Label lblTitleChildForm;
         private Panel panelShadow;
         private Panel panelDesktop;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
     }
 }

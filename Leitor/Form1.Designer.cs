@@ -139,7 +139,7 @@
             iconButton3.Dock = DockStyle.Top;
             iconButton3.FlatAppearance.BorderSize = 0;
             iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Cube;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Database;
             iconButton3.IconColor = Color.Gainsboro;
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 32;
@@ -149,11 +149,10 @@
             iconButton3.Padding = new Padding(10, 0, 20, 0);
             iconButton3.Size = new Size(220, 60);
             iconButton3.TabIndex = 3;
-            iconButton3.Text = "iconButton3";
+            iconButton3.Text = "Banco de Dados";
             iconButton3.TextAlign = ContentAlignment.MiddleLeft;
             iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton3.UseVisualStyleBackColor = true;
-            iconButton3.Visible = false;
             iconButton3.Click += iconButton3_Click;
             // 
             // iconButton2

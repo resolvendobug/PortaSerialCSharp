@@ -37,7 +37,7 @@ namespace LerPorta
 
             do
             {
-                string cs = "";
+               
                 int i = 0;
                 while (! Console.KeyAvailable) {
                     

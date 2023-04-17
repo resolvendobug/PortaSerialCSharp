@@ -7,7 +7,7 @@ namespace Leitor.Forms
     {
         public ComPort com;
         public ComPort com2;
-        int i = 0;
+        
 
         private string fileTxt = "labelPergunta.txt";
         public string[] lines;

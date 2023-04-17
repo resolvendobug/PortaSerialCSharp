@@ -1,5 +1,9 @@
+using Dapper;
 using FontAwesome.Sharp;
+using Leitor.Entity;
 using Leitor.Forms;
+using System.Data;
+using System.Data.SQLite;
 using System.Runtime.InteropServices;
 
 namespace Leitor
@@ -16,6 +20,7 @@ namespace Leitor
             leftBorderBtn.Size = new Size(7, 60);
             panel1.Controls.Add(leftBorderBtn);
 
+            
             //Form
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -90,8 +95,10 @@ namespace Leitor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+       
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -108,13 +115,13 @@ namespace Leitor
         {
             ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new Comunicação());
-            //https://www.youtube.com/watch?v=5AsJJl7Bhvc&t=25s
-            //21:21
+
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new DataBase());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
@@ -181,5 +188,7 @@ namespace Leitor
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        
     }
 }

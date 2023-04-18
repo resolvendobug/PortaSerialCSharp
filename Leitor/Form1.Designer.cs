@@ -149,7 +149,7 @@
             iconButton3.Padding = new Padding(10, 0, 20, 0);
             iconButton3.Size = new Size(220, 60);
             iconButton3.TabIndex = 3;
-            iconButton3.Text = "Banco de Dados";
+            iconButton3.Text = "Perguntas/Respostas";
             iconButton3.TextAlign = ContentAlignment.MiddleLeft;
             iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton3.UseVisualStyleBackColor = true;
@@ -195,6 +195,7 @@
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Visible = false;
             iconButton1.Click += iconButton1_Click_1;
             // 
             // panelLogo

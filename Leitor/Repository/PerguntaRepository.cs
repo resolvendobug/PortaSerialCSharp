@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Leitor.Repository
 {
-    public class PerguntaRepository
+    public class PerguntaRepository : IPerguntaRepository
     {
         private DBase _db;
         public PerguntaRepository(DBase db)

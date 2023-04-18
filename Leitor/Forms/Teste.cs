@@ -1,4 +1,7 @@
-﻿using Leitor.Util;
+﻿using Leitor.DB;
+using Leitor.Entity;
+using Leitor.Repository;
+using Leitor.Util;
 using LerPorta.Services;
 
 namespace Leitor.Forms
@@ -10,7 +13,7 @@ namespace Leitor.Forms
         
 
         private string fileTxt = "labelPergunta.txt";
-        public string[] lines;
+        public string[] lines = new string[0];
 
         public Comunicação()
         {
@@ -66,14 +69,23 @@ namespace Leitor.Forms
             }
         }
 
-        private void btnIniciar_Click(object sender, EventArgs e)
+        private async void btnIniciar_Click(object sender, EventArgs e)
         {
 
-            if (File.Exists(fileTxt))
-            {
-                lines = File.ReadAllLines(fileTxt);
 
-            }
+           DBase db = new DBase();
+           PerguntaRepository p = new PerguntaRepository(db);
+           List<Pergunta> pergunta = await p.LoadData();
+            List<string> x = new List<string>();
+            foreach (var item in pergunta)
+           {
+              x.Add(item.numeroPergunta + ";" + item.dadosPergunta + ";" + item.dadosResposta);
+               
+           }
+           lines = x.ToArray();
+
+
+
 
 
             if (timer1.Enabled)

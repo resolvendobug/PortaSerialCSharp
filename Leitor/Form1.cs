@@ -20,7 +20,7 @@ namespace Leitor
             leftBorderBtn.Size = new Size(7, 60);
             panel1.Controls.Add(leftBorderBtn);
 
-            
+
             //Form
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -95,10 +95,10 @@ namespace Leitor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-       
+
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -189,6 +189,6 @@ namespace Leitor
             WindowState = FormWindowState.Minimized;
         }
 
-        
+
     }
 }
